@@ -188,7 +188,6 @@ document.addEventListener('DOMContentLoaded', () => {
         usedLetters.clear();
         keys.forEach(key => {
             key.classList.remove('hidden');
-            key.addEventListener('click', handleKeyClick); // Re-add the click event listener
         });
         createBoard();
         const celebrationMessage = document.querySelector('.celebration-message');
@@ -200,6 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.removeChild(resetPrompt);
         }
     }
+    
 
     createBoard();
 });

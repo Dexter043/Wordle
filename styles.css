@@ -149,7 +149,7 @@ header {
 .celebration-message {
     font-size: 32px;
     font-weight: bold;
-    color: #ffeb3b; /* Yellow color */
+    color: #ffeb3b;
     animation: celebration 1s infinite;
     margin-top: 20px;
     text-align: center;

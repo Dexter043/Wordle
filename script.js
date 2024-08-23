@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fetch words from local file
     async function fetchWords() {
         try {
-            const response = await fetch('words.txt'); // Assuming words.txt is in the same directory
+            const response = await fetch('words.txt'); 
             if (!response.ok) {
                 throw new Error('Failed to fetch words');
             }

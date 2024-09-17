@@ -1,3 +1,5 @@
+import IMessageItems from './IMessageItems'
+
 document.addEventListener('DOMContentLoaded', () => {
     const board = document.getElementById('board');
     const keys = document.querySelectorAll('.key');
@@ -100,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function displayCelebrationMessage() {
         const celebrationMessage = document.createElement('div');
         celebrationMessage.classList.add('celebration-message');
-        celebrationMessage.textContent = 'Great! You got it correct!';
+        celebrationMessage.textContent = IMessageItems.celebrationMessage;
         document.body.appendChild(celebrationMessage);
     }
 

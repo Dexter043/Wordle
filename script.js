@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const resetPrompt = document.createElement('div');
         resetPrompt.classList.add('reset-prompt');
         resetPrompt.innerHTML = `
-            <p>Do you want to reset the game?</p>
+            <p><h3>Do you want to reset the game?</h3></p>
             <button id="resetButton">Reset</button>
             <button id="continueButton">Continue</button>
         `;

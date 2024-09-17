@@ -4,25 +4,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const enterKey = document.getElementById('enter');
     const deleteKey = document.getElementById('delete');
 
-    let words = []; // Array to store fetched words
+    let words = []; 
 
-    // Fetch words from local file
+    
     async function fetchWords() {
         try {
-            const response = await fetch('words.txt'); // Assuming words.txt is in the same directory
+            const response = await fetch('words.txt'); 
             if (!response.ok) {
                 throw new Error('Failed to fetch words');
             }
             const text = await response.text();
-            words = text.trim().split('\n'); // Split text into an array of words
-            resetGame(); // Reset the game with fetched words
+            words = text.trim().split('\n'); 
+            resetGame(); 
         } catch (error) {
             console.error('Error fetching words:', error);
-            // Handle error (e.g., show an alert or log it)
+            
         }
     }
 
-    // Call fetchWords to start the game with fetched words
+
     fetchWords();
 
     const maxGuesses = 6;
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const usedLetters = new Set();
 
     function createBoard() {
-        board.innerHTML = ''; // Clear the board
+        board.innerHTML = ''; 
         for (let i = 0; i < maxGuesses; i++) {
             for (let j = 0; j < targetWord.length; j++) {
                 const tile = document.createElement('div');
@@ -76,8 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         correctGuess = false;
                     }
                     tile.classList.remove('reveal');
-                }, 300); // Match half of the animation duration
-            }, i * 450); // Delay each tile's reveal by 450ms
+                }, 300); 
+            }, i * 450); 
         });
 
         setTimeout(() => {
@@ -91,10 +91,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     setTimeout(() => {
                         alert(`Oops, you have exhausted all the guesses! The word was ${targetWord}. Better luck next time`);
                         resetGame();
-                    }, 2500); // Wait for all animations to finish before showing the alert
+                    }, 2500); 
                 }
             }
-        }, targetWord.length * 450 + 300); // Ensure this happens after all tiles have revealed
+        }, targetWord.length * 450 + 300); 
     }
 
     function displayCelebrationMessage() {
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const resetPrompt = document.createElement('div');
         resetPrompt.classList.add('reset-prompt');
         resetPrompt.innerHTML = `
-            <p>Do you want to reset the game?</p>
+            <p><h3>Do you want to reset the game?</h3></p>
             <button id="resetButton">Reset</button>
             <button id="continueButton">Continue</button>
         `;
@@ -122,8 +122,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const continueButton = document.getElementById('continueButton');
         continueButton.addEventListener('click', () => {
-            // Do nothing, continue showing celebration message
-            resetButton.style.display = 'none'; // Hide reset button
+            
+            resetButton.style.display = 'none'; 
         });
     }
 

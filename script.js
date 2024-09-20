@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function updateBoard() {
+    const updateBoard=() =>{
         const tiles = document.querySelectorAll('.tile');
         const startIndex = currentRow * targetWord.length;
         for (let i = 0; i < currentGuess.length; i++) {
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function checkGuess() {
+    const checkGuess=() =>{
         if (currentGuess.length !== targetWord.length) return;
 
         const tiles = document.querySelectorAll('.tile');
@@ -97,14 +97,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }, targetWord.length * 450 + 300); 
     }
 
-    function displayCelebrationMessage() {
+    const displayCelebrationMessage= () =>{
         const celebrationMessage = document.createElement('div');
         celebrationMessage.classList.add('celebration-message');
         celebrationMessage.textContent = 'Great! You got it correct!';
         document.body.appendChild(celebrationMessage);
     }
 
-    function showResetOption() {
+    const showResetOption = ()=> {
         const resetPrompt = document.createElement('div');
         resetPrompt.classList.add('reset-prompt');
         resetPrompt.innerHTML = `
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function hideLetter(letter) {
+    const hideLetter=(letter)=> {
         if (!usedLetters.has(letter)) {
             usedLetters.add(letter);
             const key = document.querySelector(`.key[data-key="${letter}"]`);
@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function handleKeyClick(event) {
+    const handleKeyClick=(event) =>{
         const letter = event.target.textContent.toUpperCase();
         if (letter === 'ENTER') {
             checkGuess();
@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function handleKeyPress(event) {
+    const handleKeyPress=(event)=>{
         const key = event.key.toUpperCase();
         if (/^[A-Z]$/.test(key) && !usedLetters.has(key)) {
             if (currentGuess.length < targetWord.length) {
@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.addEventListener('keydown', handleKeyPress);
 
-    function resetGame() {
+    const resetGame=()=> {
         targetWord = words[Math.floor(Math.random() * words.length)].trim().toUpperCase();
         currentRow = 0;
         currentGuess = '';

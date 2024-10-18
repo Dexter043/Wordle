@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
             words = text.trim().split('\n'); 
             resetGame(); 
         } catch (error) {
+            alert('Sorry! we are having some issues',error);
             console.error('Error fetching words:', error);
             
         }
